@@ -15,9 +15,9 @@ library(GA)
 library(scales)
  
 repo          <- list()
-repo$db_store <- "C:/A-Projects/Eletronic Fraud Alerts Queue/data/"
-repo$output   <- "C:/A-Projects/Eletronic Fraud Alerts Queue/data/output/"
-repo$sup      <- "C:/A-Projects/Eletronic Fraud Alerts Queue/data/support/"
+repo$db_store <- ""
+repo$output   <- ""
+repo$sup      <- ""
  
 # ################################### #
 # FUNCTION DEFINITION ----------------
@@ -31,16 +31,16 @@ riskCurve   <- function(x, r=10, cap=20){
                   res <- ifelse(res < cap, res, cap)
                   return(res)
                }
-zRiskFunc1  <- function(x, r = 100/1,  cap = 24.14)    { riskCurve(x=x, r=r, cap=cap) } # THE_WHITELIST
-zRiskFunc2  <- function(x, r = 100/2,  cap = 20551.42) { riskCurve(x=x, r=r, cap=cap) } # CVV_DECLINES
-zRiskFunc3  <- function(x, r = 100/3,  cap = 48.71)    { riskCurve(x=x, r=r, cap=cap) } # AutoBlock_BadMerch
-zRiskFunc4  <- function(x, r = 100/4,  cap = 30.49)    { riskCurve(x=x, r=r, cap=cap) } # P1
-zRiskFunc5  <- function(x, r = 100/5,  cap = 102.61)   { riskCurve(x=x, r=r, cap=cap) } # P2
-zRiskFunc6  <- function(x, r = 100/6,  cap = 27.76)    { riskCurve(x=x, r=r, cap=cap) } # P3
-zRiskFunc7  <- function(x, r = 100/7,  cap = 5.57)     { riskCurve(x=x, r=r, cap=cap) } # P4
-zRiskFunc8  <- function(x, r = 100/8,  cap = 27.67)    { riskCurve(x=x, r=r, cap=cap) } # P5
-zRiskFunc9  <- function(x, r = 100/9,  cap = 31.82)    { riskCurve(x=x, r=r, cap=cap) } # P6
-zRiskFunc10 <- function(x, r = 100/10, cap = 110.70)   { riskCurve(x=x, r=r, cap=cap) } # Deposit
+zRiskFunc1  <- function(x, r = 100/1,  cap = ??)    { riskCurve(x=x, r=r, cap=cap) } # THE_WHITELIST
+zRiskFunc2  <- function(x, r = 100/2,  cap = ??) { riskCurve(x=x, r=r, cap=cap) } # CVV_DECLINES
+zRiskFunc3  <- function(x, r = 100/3,  cap = ??)    { riskCurve(x=x, r=r, cap=cap) } # AutoBlock_BadMerch
+zRiskFunc4  <- function(x, r = 100/4,  cap = ??)    { riskCurve(x=x, r=r, cap=cap) } # P1
+zRiskFunc5  <- function(x, r = 100/5,  cap = ??)   { riskCurve(x=x, r=r, cap=cap) } # P2
+zRiskFunc6  <- function(x, r = 100/6,  cap = ??)    { riskCurve(x=x, r=r, cap=cap) } # P3
+zRiskFunc7  <- function(x, r = 100/7,  cap = ??)     { riskCurve(x=x, r=r, cap=cap) } # P4
+zRiskFunc8  <- function(x, r = 100/8,  cap = ??)    { riskCurve(x=x, r=r, cap=cap) } # P5
+zRiskFunc9  <- function(x, r = 100/9,  cap = ??)    { riskCurve(x=x, r=r, cap=cap) } # P6
+zRiskFunc10 <- function(x, r = 100/10, cap = ??)   { riskCurve(x=x, r=r, cap=cap) } # Deposit
  
 calCost <- function(x, func.index = 1){
   # ##################################### #
